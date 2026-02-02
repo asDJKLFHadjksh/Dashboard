@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/admin.css" />
+</head>
+<body class="page">
+  <header class="top-bar">
+    <div class="top-bar__title">
+      <span class="status-dot" aria-hidden="true"></span>
+      <h1>Admin Dashboard</h1>
+    </div>
+    <form method="post" action="/logout">
+      <button class="btn btn-ghost" type="submit">Logout</button>
+    </form>
+  </header>
+
+  <main class="container">
+    <section class="summary" aria-label="Summary">
+      <div class="summary-card">
+        <p class="summary-label">Total pending requests</p>
+        <p class="summary-value"><%= pending.length %></p>
+      </div>
+      <div class="summary-card summary-note">
+        <p class="summary-label">Quick note</p>
+        <p class="summary-value summary-note__text">Creator perlu approval + minimal 1 portofolio</p>
+      </div>
+    </section>
+
+    <section class="requests" aria-label="Pending requests">
+      <div class="section-header">
+        <h2>Pending Requests</h2>
+        <p class="muted">Review aplikasi creator sebelum publish.</p>
+      </div>
+
+      <% if (pending.length === 0) { %>
+        <div class="empty-state">
+          <div class="empty-illustration" aria-hidden="true"></div>
+          <p class="empty-title">Belum ada permintaan creator.</p>
+          <p class="muted">Semua aplikasi sudah ditinjau.</p>
+        </div>
+      <% } %>
+
+      <% pending.forEach(function(item) { %>
+        <article class="request-card">
+          <header class="request-header">
+            <div>
+              <h3 class="request-name"><%= item.display_name || '(no name)' %></h3>
+              <p class="request-email"><%= item.email %></p>
+            </div>
+            <span class="request-date">Applied at <%= item.created_at %></span>
+          </header>
+
+          <div class="request-body">
+            <div class="portfolio">
+              <h4>Portfolio preview</h4>
+              <% if (item.media_type === 'image') { %>
+                <img src="<%= item.media_url %>" alt="Portfolio image" />
+              <% } else if (item.media_type === 'link') { %>
+                <a href="<%= item.media_url %>" target="_blank" rel="noopener">View portfolio link</a>
+              <% } else { %>
+                <p class="muted">Belum ada portfolio</p>
+              <% } %>
+            </div>
+            <div class="actions">
+              <form method="post" action="/admin/applications/<%= item.app_id %>/approve">
+                <button class="btn btn-primary" type="submit">Approve</button>
+              </form>
+              <form method="post" action="/admin/applications/<%= item.app_id %>/reject">
+                <button class="btn btn-danger" type="submit">Reject</button>
+              </form>
+            </div>
+          </div>
+        </article>
+      <% }); %>
+    </section>
+  </main>
+</body>
+</html>
