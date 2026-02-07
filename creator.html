@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creator Dashboard · ViduMarket</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="logo">Creator Studio</div>
+        <nav>
+          <a class="active" href="creator.html">Dashboard</a>
+          <a href="index.html">Marketplace</a>
+          <a href="profile.html">Profile</a>
+        </nav>
+        <div class="card soft">
+          <p class="helper">Creator Status</p>
+          <span class="badge">Pro Editor</span>
+        </div>
+      </aside>
+      <main class="dashboard-content">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Creator Dashboard</h1>
+            <p class="subtitle">Manage packages, posts, and active orders.</p>
+          </div>
+          <button class="button">Create New Project</button>
+        </div>
+
+        <section class="grid three">
+          <div class="card kpi">
+            <span>Profile Visits</span>
+            <strong>18.4k</strong>
+            <p class="helper">+18% this week</p>
+          </div>
+          <div class="card kpi">
+            <span>Active Orders</span>
+            <strong>12</strong>
+            <p class="helper">4 pending review</p>
+          </div>
+          <div class="card kpi">
+            <span>Package Rating</span>
+            <strong>4.8/5</strong>
+            <p class="helper">128 feedbacks</p>
+          </div>
+        </section>
+
+        <section class="grid two" style="margin-top: 24px;">
+          <div class="card">
+            <h3>Service Packages</h3>
+            <div class="grid" style="margin-top: 12px; gap: 12px;">
+              <div class="card soft">
+                <strong>Premium Highlights</strong>
+                <p class="helper">$220 · 5 days · 3 revisions</p>
+              </div>
+              <div class="card soft">
+                <strong>Brand Storytelling</strong>
+                <p class="helper">$480 · 8 days · 5 revisions</p>
+              </div>
+              <button class="button secondary" type="button">Edit Pricing</button>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Project Progress</h3>
+            <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
+              <li>Client "Aura" - Color grading in progress (75%)</li>
+              <li>Client "Nova" - Awaiting feedback (2 days)</li>
+              <li>Client "PixelRush" - New order received</li>
+            </ul>
+            <button class="button secondary" style="margin-top: 20px;">Update Progress</button>
+          </div>
+        </section>
+
+        <section class="grid two" style="margin-top: 24px;">
+          <div class="card">
+            <h3>Posts & Content</h3>
+            <p class="subtitle">Showcase your latest edits to attract clients.</p>
+            <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
+              <li>Behind the scenes: Wedding highlight reel</li>
+              <li>Tip: Color grading for neon cityscapes</li>
+              <li>New package announcement: Social Reels</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Profile & Settings</h3>
+            <p class="subtitle">Update your bio, portfolio, and availability.</p>
+            <div class="grid" style="margin-top: 16px; gap: 12px;">
+              <button class="button" type="button">Edit Profile</button>
+              <button class="button secondary" type="button">Update Availability</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
