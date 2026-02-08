@@ -54,6 +54,8 @@ textarea {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 32px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .page-title {
@@ -130,6 +132,58 @@ textarea {
   gap: 10px;
 }
 
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .input {
+  padding-right: 48px;
+}
+
+.icon-button {
+  position: absolute;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.icon-button:hover {
+  background: rgba(138, 78, 255, 0.16);
+  color: var(--text);
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-button .eye-open,
+.icon-button .eye-closed {
+  transition: opacity var(--transition);
+}
+
+.icon-button .eye-closed {
+  opacity: 0;
+}
+
+.icon-button.is-visible .eye-open {
+  opacity: 0;
+}
+
+.icon-button.is-visible .eye-closed {
+  opacity: 1;
+}
+
 .form-label {
   font-weight: 600;
   font-size: 0.9rem;
@@ -181,6 +235,8 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding: 24px 0;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .nav-links {
@@ -236,6 +292,71 @@ textarea {
 .marketplace-card .actions {
   display: flex;
   gap: 12px;
+}
+
+.search-bar {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: end;
+}
+
+.search-bar .button {
+  width: fit-content;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+.profile-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.table-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .layout {

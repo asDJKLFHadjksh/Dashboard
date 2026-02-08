@@ -3,30 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creator Dashboard · ViduMarket</title>
+    <title>Studio · ViduMarket</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="layout">
       <aside class="sidebar">
-        <div class="logo">Creator Studio</div>
+        <div class="logo">Studio</div>
         <nav>
           <a class="active" href="creator.html">Dashboard</a>
           <a href="index.html">Marketplace</a>
           <a href="profile.html">Profile</a>
         </nav>
-        <div class="card soft">
-          <p class="helper">Creator Status</p>
-          <span class="badge">Pro Editor</span>
-        </div>
       </aside>
       <main class="dashboard-content">
         <div class="page-header">
           <div>
-            <h1 class="page-title">Creator Dashboard</h1>
-            <p class="subtitle">Manage packages, posts, and active orders.</p>
+            <h1 class="page-title">Studio Overview</h1>
+            <p class="subtitle">Review incoming requests, active projects, and your storefront.</p>
           </div>
-          <button class="button">Create New Project</button>
+          <button class="button">View Requests</button>
         </div>
 
         <section class="grid three">
@@ -36,20 +32,54 @@
             <p class="helper">+18% this week</p>
           </div>
           <div class="card kpi">
-            <span>Active Orders</span>
-            <strong>12</strong>
-            <p class="helper">4 pending review</p>
+            <span>Incoming Requests</span>
+            <strong>6</strong>
+            <p class="helper">2 need a response today</p>
           </div>
           <div class="card kpi">
-            <span>Package Rating</span>
-            <strong>4.8/5</strong>
-            <p class="helper">128 feedbacks</p>
+            <span>Active Projects</span>
+            <strong>12</strong>
+            <p class="helper">4.8/5 customer satisfaction</p>
           </div>
         </section>
 
         <section class="grid two" style="margin-top: 24px;">
           <div class="card">
-            <h3>Service Packages</h3>
+            <h3>Incoming Requests</h3>
+            <ul class="helper" style="margin-top: 12px; display: grid; gap: 12px;">
+              <li class="card soft">
+                <strong>Launch teaser · 2 min</strong>
+                <p class="helper">Customer: Aura Media · Deadline: Sept 18</p>
+                <div class="table-actions" style="margin-top: 12px;">
+                  <button class="button" type="button">Accept</button>
+                  <button class="button secondary" type="button">Decline</button>
+                </div>
+              </li>
+              <li class="card soft">
+                <strong>Product demo · 60 sec</strong>
+                <p class="helper">Customer: Nova Labs · Deadline: Sept 21</p>
+                <div class="table-actions" style="margin-top: 12px;">
+                  <button class="button" type="button">Accept</button>
+                  <button class="button secondary" type="button">Decline</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Active Projects</h3>
+            <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
+              <li>Momentum AI · Color grading in progress (75%)</li>
+              <li>Flux Mobile · Awaiting feedback (2 days)</li>
+              <li>Pulse Media · First cut delivery scheduled</li>
+            </ul>
+            <button class="button secondary" style="margin-top: 20px;">Update Progress</button>
+          </div>
+        </section>
+
+        <section class="grid two" style="margin-top: 24px;">
+          <div class="card">
+            <h3>Packages & Pricing</h3>
+            <p class="subtitle">Keep packages clear for new customer requests.</p>
             <div class="grid" style="margin-top: 12px; gap: 12px;">
               <div class="card soft">
                 <strong>Premium Highlights</strong>
@@ -63,32 +93,36 @@
             </div>
           </div>
           <div class="card">
-            <h3>Project Progress</h3>
-            <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
-              <li>Client "Aura" - Color grading in progress (75%)</li>
-              <li>Client "Nova" - Awaiting feedback (2 days)</li>
-              <li>Client "PixelRush" - New order received</li>
-            </ul>
-            <button class="button secondary" style="margin-top: 20px;">Update Progress</button>
-          </div>
-        </section>
-
-        <section class="grid two" style="margin-top: 24px;">
-          <div class="card">
-            <h3>Posts & Content</h3>
-            <p class="subtitle">Showcase your latest edits to attract clients.</p>
+            <h3>Posts & Portfolio</h3>
+            <p class="subtitle">Share your latest edits and updates.</p>
             <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
               <li>Behind the scenes: Wedding highlight reel</li>
               <li>Tip: Color grading for neon cityscapes</li>
               <li>New package announcement: Social Reels</li>
             </ul>
           </div>
+        </section>
+
+        <section class="grid two" style="margin-top: 24px;">
           <div class="card">
-            <h3>Profile & Settings</h3>
-            <p class="subtitle">Update your bio, portfolio, and availability.</p>
+            <h3>Progress Updates</h3>
+            <p class="subtitle">Send quick notes to customers on active work.</p>
+            <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
+              <li>Momentum AI · Rough cut delivered (today)</li>
+              <li>Flux Mobile · Awaiting asset upload</li>
+              <li>Pulse Media · Second revision queued</li>
+            </ul>
+            <button class="button secondary" style="margin-top: 20px;">Post Update</button>
+          </div>
+          <div class="card">
+            <h3>Availability</h3>
+            <p class="subtitle">Let customers know when you're accepting new work.</p>
             <div class="grid" style="margin-top: 16px; gap: 12px;">
-              <button class="button" type="button">Edit Profile</button>
-              <button class="button secondary" type="button">Update Availability</button>
+              <div class="card soft">
+                <strong>Now accepting requests</strong>
+                <p class="helper">Next opening: Sept 25</p>
+              </div>
+              <button class="button" type="button">Update Availability</button>
             </div>
           </div>
         </section>

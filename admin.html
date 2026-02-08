@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard · ViduMarket</title>
+    <title>System Panel · ViduMarket</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="layout">
       <aside class="sidebar">
-        <div class="logo">ViduMarket Admin</div>
+        <div class="logo">System Panel</div>
         <nav>
           <a class="active" href="admin.html">Overview</a>
           <a href="index.html">Marketplace</a>
@@ -26,7 +26,7 @@
       <main class="dashboard-content">
         <div class="page-header">
           <div>
-            <h1 class="page-title">System Analytics</h1>
+            <h1 class="page-title">System Panel</h1>
             <p class="subtitle">Monitor traffic, servers, and user activity.</p>
           </div>
           <button class="button">Generate Report</button>
@@ -44,7 +44,7 @@
             <p class="helper">Stable across all regions</p>
           </div>
           <div class="card kpi">
-            <span>Active Creators</span>
+            <span>Active Studios</span>
             <strong>1,284</strong>
             <p class="helper">45 new today</p>
           </div>
@@ -64,8 +64,8 @@
           <div class="card">
             <h3>Activity Logs</h3>
             <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
-              <li>Creator "Studio Vale" uploaded new package.</li>
-              <li>Client "Aura" opened a support ticket.</li>
+              <li>Studio "Studio Vale" uploaded new package.</li>
+              <li>Customer "Aura" opened a support ticket.</li>
               <li>Maintenance scheduled for 02:00 AM.</li>
               <li>New admin permissions granted to "ops_lead".</li>
             </ul>
@@ -74,45 +74,81 @@
 
         <section class="card" style="margin-top: 24px;">
           <h3>User Permissions</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Studio Vale</td>
-                <td>Creator</td>
-                <td><span class="badge">Active</span></td>
-                <td>
-                  <button class="button secondary" type="button">Suspend</button>
-                  <button class="button" type="button">Ban</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Aura Media</td>
-                <td>Client</td>
-                <td><span class="badge">Active</span></td>
-                <td>
-                  <button class="button secondary" type="button">Suspend</button>
-                  <button class="button" type="button">Ban</button>
-                </td>
-              </tr>
-              <tr>
-                <td>PixelForge</td>
-                <td>Creator</td>
-                <td><span class="badge">Review</span></td>
-                <td>
-                  <button class="button secondary" type="button">Suspend</button>
-                  <button class="button" type="button">Ban</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <form class="search-bar" style="margin-top: 16px;">
+            <div class="form-group">
+              <label class="form-label" for="user-search">Search users</label>
+              <input class="input" id="user-search" type="search" placeholder="Search by username or email" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="user-role">Access type (internal)</label>
+              <select class="input" id="user-role">
+                <option>All access types</option>
+                <option>Operations</option>
+                <option>Studio</option>
+                <option>Customer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="user-status">Status</label>
+              <select class="input" id="user-status">
+                <option>All statuses</option>
+                <option>Active</option>
+                <option>Suspended</option>
+                <option>Banned</option>
+              </select>
+            </div>
+            <button class="button secondary" type="button">Search</button>
+          </form>
+          <div class="empty-state" style="margin-top: 20px;">
+            Run a search to load users. Actions will appear once results are shown.
+          </div>
+          <div style="margin-top: 20px;">
+            <p class="helper">Search results (3)</p>
+            <table class="table" style="margin-top: 12px;">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Access Tier</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Studio Vale</td>
+                  <td>Studio</td>
+                  <td><span class="badge">Active</span></td>
+                  <td class="table-actions">
+                    <button class="button secondary" type="button">Suspend</button>
+                    <button class="button" type="button">Ban</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aura Media</td>
+                  <td>Customer</td>
+                  <td><span class="badge">Active</span></td>
+                  <td class="table-actions">
+                    <button class="button secondary" type="button">Suspend</button>
+                    <button class="button" type="button">Ban</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PixelForge</td>
+                  <td>Studio</td>
+                  <td><span class="badge">Review</span></td>
+                  <td class="table-actions">
+                    <button class="button secondary" type="button">Suspend</button>
+                    <button class="button" type="button">Ban</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-actions" style="margin-top: 16px;">
+              <button class="button secondary" type="button">Previous</button>
+              <button class="button secondary" type="button">Next</button>
+              <span class="helper">Page 1 of 12</span>
+            </div>
+          </div>
         </section>
       </main>
     </div>
