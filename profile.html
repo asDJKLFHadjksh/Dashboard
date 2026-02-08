@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile · ViduMarket</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Client Profile</h1>
+          <p class="subtitle">Manage your identity and upgrade to a creator account.</p>
+        </div>
+        <a class="button secondary" href="settings.html">Account Settings</a>
+      </div>
+
+      <section class="card profile-card">
+        <div class="avatar">VM</div>
+        <div>
+          <h2>ViduMember</h2>
+          <p class="helper">Client since 2024 · Jakarta, Indonesia</p>
+        </div>
+      </section>
+
+      <section class="grid two" style="margin-top: 24px;">
+        <div class="card">
+          <h3>Edit Profile</h3>
+          <form class="grid" style="gap: 16px; margin-top: 16px;">
+            <div class="form-group">
+              <label class="form-label" for="new-username">Change Username</label>
+              <input class="input" id="new-username" type="text" placeholder="viduclient" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="photo">Upload Profile Photo</label>
+              <input class="input" id="photo" type="file" />
+            </div>
+            <button class="button" type="button">Save Changes</button>
+          </form>
+        </div>
+        <div class="card soft">
+          <h3>Creator Upgrade</h3>
+          <p class="subtitle">Switch to a creator account to sell your services.</p>
+          <ul class="helper" style="margin-top: 12px; display: grid; gap: 8px;">
+            <li>Launch service packages and pricing.</li>
+            <li>Monitor project traffic and analytics.</li>
+            <li>Manage client requests in one place.</li>
+          </ul>
+          <button class="button" style="margin-top: 20px;" data-switch-creator type="button">
+            Switch to Creator Account
+          </button>
+          <a class="button secondary" style="margin-top: 12px;" href="creator.html">Go to Creator Dashboard</a>
+          <div class="alert success" style="margin-top: 16px;" data-alert></div>
+        </div>
+      </section>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
