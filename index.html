@@ -14,98 +14,129 @@
         </div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
+          <a href="#creators">Explore Creators</a>
           <a href="login.html">Login</a>
           <a href="register.html">Register</a>
-          <a href="creator.html">Creator Dashboard</a>
+          <a href="profile.html">Profile</a>
         </nav>
       </header>
 
       <section class="hero">
         <div>
-          <span class="badge">Video Editing Services</span>
-          <h1>Discover elite editors for every cut, highlight, and cinematic story.</h1>
+          <span class="badge">Creator Directory</span>
+          <h1>Explore standout editors for every cut, highlight, and cinematic story.</h1>
           <p>
-            Browse curated creator packages, track project progress, and launch new edit requests in a
-            sleek marketplace designed for modern creators.
+            Browse verified creators, compare styles, and send order requests when you're ready. No
+            account needed to explore.
           </p>
           <div class="hero-actions">
-            <a class="button" href="register.html">Start as a Client</a>
-            <a class="button secondary" href="login.html">Order Project</a>
+            <a class="button" href="#creators">Browse Creators</a>
+            <a class="button secondary" href="login.html">Login to Order</a>
           </div>
         </div>
         <div class="card">
-          <h2>Instant Marketplace Snapshot</h2>
-          <p class="subtitle">Top creators this week</p>
+          <h2>Marketplace Snapshot</h2>
+          <p class="subtitle">Creator activity this week</p>
           <div class="grid two" style="margin-top: 24px;">
             <div class="kpi">
-              <span>Active packages</span>
-              <strong>128</strong>
+              <span>Active creators</span>
+              <strong>384</strong>
             </div>
             <div class="kpi">
-              <span>Orders in queue</span>
-              <strong>56</strong>
+              <span>New requests</span>
+              <strong>74</strong>
             </div>
             <div class="kpi">
               <span>Avg. turnaround</span>
               <strong>36 hrs</strong>
             </div>
             <div class="kpi">
-              <span>Client rating</span>
+              <span>Customer rating</span>
               <strong>4.9/5</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="page-header">
+      <section class="page-header" id="creators">
         <div>
-          <h2 class="page-title">Featured Creator Packages</h2>
-          <p class="subtitle">Curated services ready to kick off new projects.</p>
+          <h2 class="page-title">Creator Directory</h2>
+          <p class="subtitle">Search by @username, compare styles, and send an order request.</p>
         </div>
-        <a class="button secondary" href="login.html">Order Project</a>
+        <a class="button secondary" href="login.html">Order</a>
+      </section>
+
+      <section class="card" style="margin-bottom: 24px;">
+        <form class="search-bar">
+          <div class="form-group">
+            <label class="form-label" for="creator-search">Search creators</label>
+            <input class="input" id="creator-search" type="search" placeholder="Search by name or @handle" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="creator-sort">Sort by</label>
+            <select class="input" id="creator-sort">
+              <option>Most popular</option>
+              <option>Newest</option>
+              <option>Top rated</option>
+            </select>
+          </div>
+          <button class="button secondary" type="button">Apply</button>
+        </form>
       </section>
 
       <section class="grid three">
         <article class="card marketplace-card">
           <div>
-            <h3>Highlight Reel Turbo</h3>
-            <p class="helper">Fast-paced editing for esports and highlights.</p>
+            <div class="tag-list" style="margin-bottom: 10px;">
+              <span class="tag">Esports</span>
+              <span class="tag">Fast Turnaround</span>
+            </div>
+            <h3>Alya Motion</h3>
+            <p class="helper">@alyamotion · Hype edits + cinematic montages.</p>
           </div>
           <div class="meta">
             <span>From $180</span>
-            <span>5 days</span>
+            <span>4 days</span>
           </div>
           <div class="actions">
-            <button class="button">Order Project</button>
-            <button class="button secondary">View Profile</button>
+            <a class="button secondary" href="profile.html">View Creator</a>
+            <a class="button" href="login.html">Order</a>
           </div>
         </article>
         <article class="card marketplace-card">
           <div>
-            <h3>Brand Story Cinematic</h3>
-            <p class="helper">Premium storytelling edit with motion graphics.</p>
+            <div class="tag-list" style="margin-bottom: 10px;">
+              <span class="tag">Brand Films</span>
+              <span class="tag">Motion Graphics</span>
+            </div>
+            <h3>Studio Vale</h3>
+            <p class="helper">@studiovale · Premium storytelling and launch films.</p>
           </div>
           <div class="meta">
             <span>From $420</span>
             <span>7 days</span>
           </div>
           <div class="actions">
-            <button class="button">Order Project</button>
-            <button class="button secondary">View Profile</button>
+            <a class="button secondary" href="profile.html">View Creator</a>
+            <a class="button" href="login.html">Order</a>
           </div>
         </article>
         <article class="card marketplace-card">
           <div>
-            <h3>Social Media Essentials</h3>
-            <p class="helper">Reels and TikTok-ready clips in 48 hours.</p>
+            <div class="tag-list" style="margin-bottom: 10px;">
+              <span class="tag">Short-form</span>
+              <span class="tag">Reels</span>
+            </div>
+            <h3>PixelRush</h3>
+            <p class="helper">@pixelrush · Scroll-stopping clips in 48 hours.</p>
           </div>
           <div class="meta">
             <span>From $120</span>
             <span>2 days</span>
           </div>
           <div class="actions">
-            <button class="button">Order Project</button>
-            <button class="button secondary">View Profile</button>
+            <a class="button secondary" href="profile.html">View Creator</a>
+            <a class="button" href="login.html">Order</a>
           </div>
         </article>
       </section>

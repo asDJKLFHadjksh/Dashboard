@@ -2,7 +2,9 @@ const togglePasswordVisibility = (toggleButton, input) => {
   toggleButton.addEventListener("click", () => {
     const isPassword = input.type === "password";
     input.type = isPassword ? "text" : "password";
-    toggleButton.textContent = isPassword ? "Hide" : "Show";
+    toggleButton.classList.toggle("is-visible", isPassword);
+    toggleButton.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+    toggleButton.setAttribute("aria-pressed", isPassword);
   });
 };
 
@@ -22,10 +24,15 @@ const initLogin = () => {
 
   const usernameInput = form.querySelector("[data-username]");
   const passwordInput = form.querySelector("[data-password]");
-  const toggle = form.querySelector("[data-toggle]");
+  const toggles = form.querySelectorAll("[data-toggle]");
   const alertBox = form.querySelector("[data-alert]");
 
-  togglePasswordVisibility(toggle, passwordInput);
+  toggles.forEach((button) => {
+    const target = form.querySelector(button.dataset.target);
+    if (target) {
+      togglePasswordVisibility(button, target);
+    }
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -49,7 +56,7 @@ const initLogin = () => {
       return;
     }
 
-    showAlert(alertBox, "Invalid credentials. Try admin/admin123, creator/creator123, or user/user123.", "error");
+    showAlert(alertBox, "Invalid credentials. Please try again.", "error");
   });
 };
 
@@ -64,7 +71,9 @@ const initRegister = () => {
 
   toggleButtons.forEach((button) => {
     const target = form.querySelector(button.dataset.target);
-    togglePasswordVisibility(button, target);
+    if (target) {
+      togglePasswordVisibility(button, target);
+    }
   });
 
   form.addEventListener("submit", (event) => {
@@ -88,7 +97,7 @@ const initProfile = () => {
   const alertBox = document.querySelector("[data-alert]");
 
   switchButton.addEventListener("click", () => {
-    showAlert(alertBox, "Creator mode enabled! Head to the Creator Dashboard.", "success");
+    showAlert(alertBox, "Studio tools enabled! Head to Studio.", "success");
   });
 };
 
@@ -98,7 +107,15 @@ const initSettings = () => {
 
   const passwordInput = form.querySelector("[data-password]");
   const confirmInput = form.querySelector("[data-confirm]");
+  const toggleButtons = form.querySelectorAll("[data-toggle]");
   const alertBox = form.querySelector("[data-alert]");
+
+  toggleButtons.forEach((button) => {
+    const target = form.querySelector(button.dataset.target);
+    if (target) {
+      togglePasswordVisibility(button, target);
+    }
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
